@@ -16,7 +16,48 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./style/style.css" />
   </head>
-  <body class="outfit_font">
+  <body
+    class="outfit_font bg-[#F4F5F7] h-screen flex items-center justify-center flex-col"
+  >
+    <div
+      class="w-[300px] h-[130px] bg-[url(./assets/bg.png)] bg-cover flex items-center justify-center"
+    >
+      <img src="./assets/logo.png" alt="" />
+    </div>
+    <!-- Login form -->
+    <form class="w-[450px] bg-white p-8 rounded-3xl">
+      <!-- Phone number input -->
+      <div class="mb-4">
+        <label class="text-base font-medium text-black capitalize block mb-3"
+          >Mobile Number</label
+        >
+        <input
+          type="number"
+          class="px-5 py-4 rounded-full placeholder:text-base font-medium bg-[#F4F5F7] border-none w-full"
+          placeholder="Enter your number"
+          id=""
+        />
+      </div>
+
+      <!-- Password Input -->
+      <div>
+        <label class="text-base font-medium text-black capitalize block mb-3"
+          >4 digit pin</label
+        >
+        <input
+          type="number"
+          class="px-5 py-4 rounded-full placeholder:text-base font-medium capitalize bg-[#F4F5F7] border-none w-full"
+          placeholder="Enter 4 digit pin"
+          id=""
+        />
+      </div>
+      <button
+        id="login-btn"
+        class="btn text-white bg-[#0874F2] rounded-full border-none w-full mt-4 capitalize text-base font-semibold"
+      >
+        login
+      </button>
+    </form>
     <!-- Js file  -->
     <script src="js/script.js"></script>
   </body>
