@@ -41,6 +41,35 @@ document
       totalAvailableBalance;
   });
 
+// Withdraw Money Functionality
+document.getElementById("withdraw-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // Get Values
+  const agentNumber = document.getElementById("agent-number").value;
+  const amount = parseInt(document.getElementById("amount-withdraw").value);
+  const pinNumber = parseInt(
+    document.getElementById("withdraw-pin-number").value
+  );
+  const availableBalance = parseInt(
+    document.getElementById("available-balance").innerText
+  );
+
+  // Validation
+  if (agentNumber.length < 11) {
+    alert("Please provide the valid agent number");
+    return;
+  }
+  if (pinNumber !== validPin) {
+    alert("Please provide a valid pin");
+    return;
+  }
+  // Feature of withdraw
+  const subtractBalance = availableBalance - amount;
+
+  document.getElementById("available-balance").innerText = subtractBalance;
+});
+
 // Toggling Feature
 
 document.getElementById("add-money").addEventListener("click", function () {
