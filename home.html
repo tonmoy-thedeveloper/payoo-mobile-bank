@@ -25,15 +25,17 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./style/style.css" />
   </head>
-  <body class="outfit_font bg-[#f4f5f7] h-screen">
+  <body class="outfit_font bg-[#f4f5f7] h-full">
     <!-- Navbar here -->
     <nav
-      class="min-h-[50px] border-b border-gray-300 py-4 px-6 flex justify-between items-center max-w-lg mx-auto"
+      class="min-h-[50px] border-b border-gray-300 py-4 px-6 flex justify-between items-center max-w-lg mx-auto bg-white"
     >
       <div class="flex items-center gap-2">
         <div><img src="./assets/logo.png" alt="" /></div>
         <div>
-          <p class="text-[#080808e6] text-lg font-extrabold">$45000</p>
+          <p class="text-[#080808e6] text-lg font-extrabold">
+            $<span id="available-balance">45000</span>
+          </p>
           <p class="text-[14px] font-normal text-[#080808e6 mt-2]">
             Available Balance
           </p>
@@ -49,12 +51,217 @@
       </div>
     </nav>
 
-    <div class="max-w-lg mx-auto my-8">
+    <div class="max-w-lg mx-auto py-8 bg-white px-6">
       <h3 class="text-gray-800 font-bold text-2xl mb-3">Welcome to Payooo!</h3>
       <p class="text-base font-normal text-[#08080880]">
         Enjoy easy and convenient financial services with us. Cashout charge is
         low and
       </p>
     </div>
+
+    <div
+      class="max-w-lg mx-auto grid grid-cols-3 gap-y-4 gap-x-3 bg-white rounded-b-3xl border-b border-white px-6 pb-6"
+    >
+      <!-- Add Money -->
+      <div
+        id="add-money"
+        class="border border-[#0808081a] flex flex-col items-center justify-center rounded-xl bg-white py-[20px] px-[10px] cursor-pointer"
+      >
+        <img src="./assets/wallet1.png" alt="" />
+        <h3 class="text-[#0874F2] font-medium text-[14px] capitalize mt-2">
+          add money
+        </h3>
+      </div>
+
+      <!-- Cash Out -->
+      <div
+        id="cash-out"
+        class="border border-[#0808081a] flex flex-col items-center justify-center rounded-xl bg-white py-[20px] px-[10px] cursor-pointer"
+      >
+        <img src="./assets/send1.png" alt="" />
+        <h3 class="text-[#0874F2] font-medium text-[14px] capitalize mt-2">
+          cashout
+        </h3>
+      </div>
+
+      <!-- Transfer Money  -->
+      <div
+        id="transfer-money"
+        class="border border-[#0808081a] flex flex-col items-center justify-center rounded-xl bg-white py-[20px] px-[10px] cursor-pointer"
+      >
+        <img src="./assets/money1.png" alt="" />
+        <h3 class="text-[#0874F2] font-medium text-[14px] capitalize mt-2">
+          Transfer money
+        </h3>
+      </div>
+
+      <!-- Get bonus -->
+      <div
+        id="get-bonus"
+        class="border border-[#0808081a] flex flex-col items-center justify-center rounded-xl bg-white py-[20px] px-[10px] cursor-pointer"
+      >
+        <img src="./assets/bonus1.png" alt="" />
+        <h3 class="text-[#0874F2] font-medium text-[14px] capitalize mt-2">
+          get bonus
+        </h3>
+      </div>
+
+      <!-- Pay Bill -->
+      <div
+        id="pay-bill"
+        class="border border-[#0808081a] flex flex-col items-center justify-center rounded-xl bg-white py-[20px] px-[10px] cursor-pointer"
+      >
+        <img src="./assets/purse1.png" alt="" />
+        <h3 class="text-[#0874F2] font-medium text-[14px] capitalize mt-2">
+          Pay Bill
+        </h3>
+      </div>
+
+      <!-- Transactions  -->
+      <div
+        id="transaction"
+        class="border border-[#0808081a] flex flex-col items-center justify-center rounded-xl bg-white py-[20px] px-[10px] cursor-pointer"
+      >
+        <img src="./assets/transaction1.png" alt="" />
+        <h3 class="text-[#0874F2] font-medium text-[14px] capitalize mt-2">
+          Transactions
+        </h3>
+      </div>
+    </div>
+
+    <!-- All form -->
+    <div class="all-form-section mx-auto max-w-lg py-8 px-6">
+      <!-- Add money -->
+      <div id="add-money-section">
+        <h1 class="text-lg font-semibold text-[#080808e6] capitalize mb-4">
+          Add money
+        </h1>
+        <form action="" class="p-6 bg-white rounded-3xl">
+          <!-- Select Bank -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >select a bank</label
+            >
+            <select
+              id="bank"
+              class="select w-full rounded-full px-5 bg-[#F4F5F7]"
+            >
+              <option disabled selected>Select Bank</option>
+              <option>UCB Bank</option>
+              <option>Brac Bank</option>
+              <option>Dutch Bangla Bank</option>
+              <option>IFIC Bank</option>
+            </select>
+          </div>
+
+          <!-- Bank account number -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >Bank account number</label
+            >
+            <input
+              id="bank-account-number"
+              type="number"
+              placeholder="Enter 11 digit account number"
+              class="input w-full bg-[#F4F5F7] rounded-full px-5 py-4"
+            />
+          </div>
+
+          <!-- Amount field -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >Amount to add</label
+            >
+            <input
+              id="amount"
+              type="number"
+              placeholder="Add Amount to withdraw"
+              class="input w-full bg-[#F4F5F7] rounded-full px-5 py-4"
+            />
+          </div>
+
+          <!-- Pin Number -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >Pin Number</label
+            >
+            <input
+              id="pin-number"
+              type="number"
+              placeholder="Enter 4 digit pin number"
+              class="input w-full bg-[#F4F5F7] rounded-full px-5 py-4"
+            />
+          </div>
+          <button
+            id="add-money-btn"
+            class="btn w-full text-lg font-semibold text-white rounded-full capitalize bg-[#0874F2]"
+          >
+            add money
+          </button>
+        </form>
+      </div>
+
+      <!-- Cash out  -->
+      <div id="cashout-section" style="display: none">
+        <h1 class="text-lg font-semibold text-[#080808e6] capitalize mb-4">
+          Cash out
+        </h1>
+        <form action="" class="p-6 bg-white rounded-3xl">
+          <!-- Agent Number -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >agent number</label
+            >
+            <input
+              id="agent-number"
+              type="number"
+              placeholder="Enter 11 digit number"
+              class="input w-full bg-[#F4F5F7] rounded-full px-5 py-4"
+            />
+          </div>
+
+          <!-- Amount to withdraw -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >Amount
+            </label>
+            <input
+              id="amount"
+              type="number"
+              placeholder="Add Amount to withdraw"
+              class="input w-full bg-[#F4F5F7] rounded-full px-5 py-4"
+            />
+          </div>
+
+          <!-- Pin Number -->
+          <div class="mb-4">
+            <label
+              class="block font-medium text-base text-[#080808b3] capitalize mb-3"
+              >Pin Number</label
+            >
+            <input
+              id="pin-number"
+              type="number"
+              placeholder="Enter 4 digit pin number"
+              class="input w-full bg-[#F4F5F7] rounded-full px-5 py-4"
+            />
+          </div>
+          <button
+            id="add-money-btn"
+            class="btn w-full text-lg font-semibold text-white rounded-full capitalize bg-[#0874F2]"
+          >
+            add money
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/home.js"></script>
   </body>
 </html>
