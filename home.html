@@ -13,10 +13,48 @@
     <!-- Tailwind CSS cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- Font Awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="./style/style.css" />
   </head>
-  <body>
-    <h1>I am home page</h1>
+  <body class="outfit_font bg-[#f4f5f7] h-screen">
+    <!-- Navbar here -->
+    <nav
+      class="min-h-[50px] border-b border-gray-300 py-4 px-6 flex justify-between items-center max-w-lg mx-auto"
+    >
+      <div class="flex items-center gap-2">
+        <div><img src="./assets/logo.png" alt="" /></div>
+        <div>
+          <p class="text-[#080808e6] text-lg font-extrabold">$45000</p>
+          <p class="text-[14px] font-normal text-[#080808e6 mt-2]">
+            Available Balance
+          </p>
+        </div>
+      </div>
+      <div>
+        <button class="btn capitalize font-[14px] text-[#080808e6] font-normal">
+          <i
+            class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"
+          ></i>
+          log out
+        </button>
+      </div>
+    </nav>
+
+    <div class="max-w-lg mx-auto my-8">
+      <h3 class="text-gray-800 font-bold text-2xl mb-3">Welcome to Payooo!</h3>
+      <p class="text-base font-normal text-[#08080880]">
+        Enjoy easy and convenient financial services with us. Cashout charge is
+        low and
+      </p>
+    </div>
   </body>
 </html>
